@@ -1,0 +1,2 @@
+Projet de cours qui permet de parlé entre different appareil par protocole tcp ip, pour lancer le projet il faut plusieur machine, il faut une machine qui lance le serveur avec go run, une machine sur client-1-crypte.go et une autre sur client-2-crypte.go.
+a savoir les données que vous renvoyer sont crypter, pour la version non crypter il faudra faire la meme avec les fichier non client non cprypte.
