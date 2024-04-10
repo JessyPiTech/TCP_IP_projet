@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Chat TCP/IP</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>tcp ip projet tchat</title>
+    <style>
+        body {
+            display: flex;
+            font-family: Arial, sans-serif;
+            background-color: #000000;
+            margin: 0;
+            padding: 0;
+            flex-direction: column;
+            align-content: center;
+            align-items: center;
+        }
+
+        form {
+            background-color: #fff;
+            max-width: 400px;
+            margin: 0 auto;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        }
+
+        label {
+            font-weight: bold;
+        }
+
+        input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        button {
+            background-color: #007BFF;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+        
+        p {
+            margin-top: 20px;
+            padding: 10px;
+            border: 1px solid rgb(54, 48, 48)050;
+            
+            border-radius: 5px;
+            max-width: 80%;
+            
+        }
+        .chat{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 80%;
+            position: relative;
+            flex-direction: column;
+            background-color: #0b0a0a;
+            border-radius: 5px;
+        }
+        .message-Destinataire-one {
+            /* Styles spécifiques pour les messages avec Destinataire=1 */
+            color: #232424; /* Exemple de style */
+            margin-left: 5%;
+            margin-right: auto;
+            background-color: #dbcccc;
+        }
+
+        .message-Destinataire-zero {
+            /* Styles spécifiques pour les messages avec Destinataire=0 */
+            color: #f7efef; /* Exemple de style */
+            margin-left: auto;
+            margin-right: 5%;
+            background-color: #6f6767;
+        }
+    </style>
+   
+</head>
+<body>
+   
+
+    
+    <h1 style="color: #f7efef;">tchat tcp ip</h1>
+    <div class="chat">
+        {{ range .Messages }}
+            {{if eq .Nom .Destinataire}}<p class="message-Destinataire-zero" >{{ .Nom}} - {{ .Text}}</p>{{else}}<p class="message-Destinataire-one" >{{ .Nom}} - {{ .Text}}</p>{{end}}
+        {{ end }}  
+        <form action="/" method="post">
+            <label for="Ms">message a envoyer:</label>
+            <input type="text" id="Ms" name="Ms" required>
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+</body>
+</html>
